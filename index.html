@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            margin: 1%;
+            padding: 0;
+        }
+        .navber{
+            display: flex;
+            list-style: none;
+        }
+        .navber li{
+            font-weight: 700;
+            font-size: 18px;
+            margin-left: 15px;
+        }
+        .header-container{
+            margin: 0 5%;
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <h1>hello world</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.&nbsp;&nbsp;&nbsp;&nbsp; Totam voluptatem consequuntur iusto. Modi voluptas recusandae laboriosam ea saepe distinctio assumenda.</p>
-        <h3 style="background-color:green;padding:5px">This is task one</h3>
-    </section>
+    <header class="header-container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo"><img src="img/logo.svg" alt=""></div>
+        <div>
+            <ul class="navber">
+                <li><a style="text-decoration: none; " href="#">Service </a></li>
+                <li><a style="text-decoration: none; " href="#">About</a></li>
+                <li><a style="text-decoration: none;" href="#">Blogs</a></li>
+                <li><a style="text-decoration: none; " href="#">Newsletter</a></li>
+                <li><a style="text-decoration: none; " href="#">Education</a></li>
+            </ul>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+
+            <p style="color: rgb(114, 0, 167); border: 1px solid rgb(118, 0, 228);font-weight: 700; ;border-radius: 20px; text-align: center;"><a style="display: inline-block; text-decoration: none;padding: 5px 15px " href="#">I WANT A FREE DISCOVER SECTION</a> </p>
+
+            <div style="margin-left: 3%;">
+                <a style="text-decoration: none;" href="#"><i style="font-size: 25px;" class="fa fa-search"></i></a>   
+            </div>
+        </div>
+
+    </header>
 </body>
 </html>
