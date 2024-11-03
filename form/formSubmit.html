@@ -33,6 +33,11 @@
                         <option value="62">62</option>
                     </select>
                 </div><br>
+                <div>
+                    <span>Certificate</span>
+                    <input type="checkbox" name="cer" value="SSC">SSC
+                    <input type="checkbox" name="cer" value="Diploma">Diploma
+                </div><br>
                 <button type="submit" onclick="submitFn()">Submit</button>
                 <!-- <input type="button" value="Submit"> -->
                 <button type="reset">Reset</button>
@@ -49,10 +54,20 @@
             const address = document.myform.address.value;
             const round = document.myform.round.value;
             let gender = '';
+
+
+
             // check gender 
             for (i = 0; i < document.myform.gen.length; i++) {
                 if (document.myform.gen[i].checked) {
                     gender = document.myform.gen[i].value;
+                }
+            }
+            let subject = '';
+            // subject loop 
+            for (i = 0; i < document.myform.cer.length; i++) {
+                if (document.myform.cer[i].checked) {
+                    subject += document.myform.cer[i].value + ",";
                 }
             }
             name.value = '';
@@ -64,6 +79,7 @@
                 write("Email : " + email + '<br><br>');
                 write("Address : " + address + '<br><br>');
                 write("Gender : " + gender + '<br><br>');
+                write("Certificate : " + subject + '<br><br>');
                 write("Round : " + round + '<br><br>');
                 write('<button onclick="self.close()">Close</button>')
                 write('<button onclick="self.print()">Print</button>')
