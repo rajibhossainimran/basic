@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="#" name="myform">
+        Name: <br>
+        <input type="text" name="name"><br>
+        <input type="email" name="email"><br>
+        <input type="button" value="Submit" onclick="submitFn()">
+    </form>
+
+
+    <script>
+
+        function submitFn() {
+            var name = document.myform.name.value;
+            var email = document.myform.email.value;
+            doc = open('', '', 'width=400px , height =200px');
+            with (doc.document) {
+                write("Name : " + name);
+                write("email : " + email);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
