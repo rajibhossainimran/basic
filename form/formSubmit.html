@@ -73,16 +73,18 @@
             name.value = '';
             email.value = '';
             address.value = '';
-            doc = open('', '', 'width=400px , height =300px');
+            doc = open('', '', 'width=500px , height =350px');
             with (doc.document) {
+                write("<body style ='background-color:skyblue; padding:10px 20px; font-size:18px; '>");
                 write("Name : " + name + '<br><br>');
                 write("Email : " + email + '<br><br>');
                 write("Address : " + address + '<br><br>');
                 write("Gender : " + gender + '<br><br>');
                 write("Certificate : " + subject + '<br><br>');
                 write("Round : " + round + '<br><br>');
-                write('<button onclick="self.close()">Close</button>')
-                write('<button onclick="self.print()">Print</button>')
+                write('<button style="background-color:red; padding:10px 20px ; border-radius:20px; margin-right:30px" onclick="self.close()">Close</button>')
+                write('<button  style="background-color:green; padding:10px 20px ; border-radius:20px" onclick="self.print()">Print</button>')
+
             }
         }
 
