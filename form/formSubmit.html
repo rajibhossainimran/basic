@@ -9,12 +9,36 @@
 
 <body>
 
-    <form action="#" name="myform">
-        Name: <br>
-        <input type="text" name="name"><br>
-        <input type="email" name="email"><br>
-        <input type="button" value="Submit" onclick="submitFn()">
-    </form>
+    <section style="height: 600px; background-color: rgb(230, 230, 230); ">
+        <div class="form-container"
+            style="background-color: rgb(139, 179, 179); padding: 15px 10px; border-radius: 20px; display: flex; justify-content: center; align-items: center; width: 400px; margin-left: 30%; box-shadow: rgba(0,0,0,0.35) ;">
+            <form action="#" name="myform">
+                Name: <br>
+                <input type="text" name="name"><br><br>
+                Email: <br>
+                <input type="email" name="email"><br><br>
+                Address : <br>
+                <textarea name="address" id=""></textarea><br><br>
+                <div>
+                    <span>Gender :</span>
+                    Male :<input type="radio" name="gen" value="male">
+                    Female :<input type="radio" name="gen" value="female">
+                </div><br>
+                <div>
+                    <span>Round</span>
+                    <select name="round" id="">
+                        <option value="59">59</option>
+                        <option value="60">60</option>
+                        <option value="61">61</option>
+                        <option value="62">62</option>
+                    </select>
+                </div><br>
+                <button type="submit" onclick="submitFn()">Submit</button>
+                <!-- <input type="button" value="Submit"> -->
+                <button type="reset">Reset</button>
+            </form>
+        </div>
+    </section>
 
 
     <script>
@@ -22,12 +46,30 @@
         function submitFn() {
             var name = document.myform.name.value;
             var email = document.myform.email.value;
-            doc = open('', '', 'width=400px , height =200px');
+            const address = document.myform.address.value;
+            const round = document.myform.round.value;
+            let gender = '';
+            // check gender 
+            for (i = 0; i < document.myform.gen.length; i++) {
+                if (document.myform.gen[i].checked) {
+                    gender = document.myform.gen[i].value;
+                }
+            }
+            name.value = '';
+            email.value = '';
+            address.value = '';
+            doc = open('', '', 'width=400px , height =300px');
             with (doc.document) {
-                write("Name : " + name);
-                write("email : " + email);
+                write("Name : " + name + '<br><br>');
+                write("Email : " + email + '<br><br>');
+                write("Address : " + address + '<br><br>');
+                write("Gender : " + gender + '<br><br>');
+                write("Round : " + round + '<br><br>');
+                write('<button onclick="self.close()">Close</button>')
+                write('<button onclick="self.print()">Print</button>')
             }
         }
+
     </script>
 
 </body>
