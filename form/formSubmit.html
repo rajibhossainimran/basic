@@ -14,7 +14,7 @@
             style="background-color: rgb(139, 179, 179); padding: 15px 10px; border-radius: 20px; display: flex; justify-content: center; align-items: center; width: 400px; margin-left: 30%; box-shadow: rgba(0,0,0,0.35) ;">
             <form action="#" name="myform">
                 Name: <br>
-                <input type="text" name="name"><br><br>
+                <input type="text" name="name" onblur="checkName()"><br><br>
                 Email: <br>
                 <input type="email" name="email" id="email" onblur="checkEmail()"><br><br>
                 Address : <br>
@@ -47,11 +47,22 @@
 
 
     <script>
+        // check name function 
+        function checkName() {
+            var name = document.myform.name.value;
+            console.log(name.length);
+            if (name.trim().length > 11) {
+                alert('Name should be less than 12 characters');
+                return false;
+            } else {
+                return true;
+            }
+        }
         // email function 
         function checkEmail() {
             const email = document.getElementById('email');
-            const retx = /^[a-z-0-9._%+-]+@[a-z-0-9.-]+\.[a-z]{2,}$/;
-            if (!retx.test(email.value)) {
+            const a = /^[a-z-0-9._%+-]+@[a-z-0-9.-]+\.[a-z]{2,}$/;
+            if (!a.test(email.value)) {
                 alert('Please Enter valid email');
             }
         }
