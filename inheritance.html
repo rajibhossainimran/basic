@@ -17,8 +17,9 @@
                 this.color = color;
             }
             myF() {
-                console.log(`${this.car} car owner is ${this.owner}`);
+                return document.write(`${this.car} car owner is ${this.owner}`);
             }
+            name = 'tata';
         }
 
         class Bike extends Car {
@@ -26,11 +27,24 @@
                 super(owner, car, model, color)
                 this.speed = speed;
             }
-        }
+
+            munna = 'munnni';
+        };
 
         const result = new Bike('Ismail', 'R15', 'v4', 'black', '1200cc');
-        console.log(result);
-        console.log(`${result.car} owner is ${result.owner} . bike color is ${result.color} , bike model is ${result.model},bike speed is ${result.speed}`)
+        // console.log(result);
+
+        document.write(`Call the bike class // ${result.car} owner is ${result.owner} . bike color is ${result.color} , bike model is ${result.model},bike speed is ${result.speed} Company name : ${result.name}`);
+        document.write('<br>')
+        document.write(result.myF());
+
+
+        document.write('<br>')
+        document.write('<br>')
+        // call the car class 
+        const car = new Car('Munna', 'Rolls Royce', 'Phantom', 'Black');
+        console.log(car);
+        document.write(`Call the Car class // ${car.car} owner is ${car.owner} . car color is ${car.color} , car model is ${car.model} ${car.myF()}`);
     </script>
 </body>
 
