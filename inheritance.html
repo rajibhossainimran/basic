@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+
+<body>
+    <script>
+        class Car {
+            constructor(owner, car, model, color) {
+                this.owner = owner;
+                this.car = car;
+                this.model = model;
+                this.color = color;
+            }
+            myF() {
+                console.log(`${this.car} car owner is ${this.owner}`);
+            }
+        }
+
+        class Bike extends Car {
+            constructor(owner, car, model, color, speed) {
+                super(owner, car, model, color)
+                this.speed = speed;
+            }
+        }
+
+        const result = new Bike('Ismail', 'R15', 'v4', 'black', '1200cc');
+        console.log(result);
+        console.log(`${result.car} owner is ${result.owner} . bike color is ${result.color} , bike model is ${result.model},bike speed is ${result.speed}`)
+    </script>
+</body>
+
+</html>
